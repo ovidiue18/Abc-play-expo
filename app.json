@@ -1,20 +1,26 @@
 {
   "expo": {
-    "name": "ABCPlay",
+    "name": "ABC Play",
     "slug": "abc-play",
     "version": "1.0.0",
-    "sdkVersion": "50.0.0",
-    "platforms": ["ios", "android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4A90E2"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#4A90E2"
+      },
+      "package": "com.abcplay.app"
     },
-    "assetBundlePatterns": ["**/*"]
+    "web": { "bundler": "metro", "favicon": "./assets/icon.png" },
+    "plugins": [],
+    "scheme": "abcplay"
   }
 }
