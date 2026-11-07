@@ -1,0 +1,348 @@
+AstravexOS
+Windows 11 Pro — ediție optimizată
+Ghid complet: ediții, versiuni, funcții, instalare și riscuri
+Versiune document: 1.0  •  Data: 7 noiembrie 2026
+Bază: Windows 11 Pro x64 (25H2 / 24H2 / LTSC)  •  Limbă: en-US
+Arhitectură: x64  •  Format: ISO (~5,3 GB)
+Fără bloatware Compact OS + LZX Instalabil fără TPM Toolbox integrat Updatabil
+Document tehnic independent. AstravexOS este un sistem de operare modificat, neafișiat și nelicențiat de Microsoft
+Corporation. „Windows 11" este marcă înregistrată a Microsoft Corporation.
+Cuprins
+1 Ce este AstravexOS
+2 Origine, distribuție și verificarea fișierelor
+3 Edițiile disponibile (variantele ISO)
+4 Versiuni actuale și ciclu de actualizare
+5 Funcții și optimizări incluse
+6 Ce se elimină sau se dezactivează
+7 Astravex Toolbox
+8 Cerințe de sistem
+9 Instalare pas cu pas
+10 Actualizare și mentenanță
+11 Avantaje și dezavantaje
+12 Pentru cine este potrivit
+13 Întrebări frecvente
+14 Concluzie
+1. Ce este AstravexOS
+AstravexOS este o variantă modificată („modded") a Windows 11 Pro, construită pe imaginea oficială
+Microsoft și apoi curățată de componentele considerate inutile. Nu este un produs oficial Microsoft și nu este
+licențiat de Microsoft.
+Ideea din spatele proiectului: o instalare de Windows 11 fără bloatware, cu servicii și procese de fundal
+reduse la minim, optimizată pentru jocuri, streaming și PC-uri modeste — RAM puțin, HDD lent sau
+procesoare vechi care nu trec de cerințele oficiale de Windows 11.
+Rezultatul este un Windows 11 care:
+pornește mai repede (raportări ale utilizatorilor: 30–50% mai rapid la boot);
+consumă mai puțin RAM și are mai puține procese în idle (în mașină virtuală: câteva zeci de procese, față
+de 150–200 pe Windows-ul standard);
+ocupă mai puțin spațiu pe disc (compresie Compact OS + LZX);
+are telemetria și aplicațiile preinstalate eliminate;
+rămâne actualizabil prin Windows Update — nu este înghețat pe o versiune.
+Se distribuie ca ISO de ~5,2–5,4 GB, în limba engleză (en-US), arhitectură x64, împachetat într-o arhivă
+7z/RAR protejată cu parolă (25h2 sau 24h2, după versiune).
+Pe scurt: același nucleu Windows 11, aceleași drivere și același Windows Update — dar cu stratul de aplicații,
+servicii și telemetrie redus la esențial, plus un set de tweak-uri de performanță și un toolbox de configurare.
+•
+•
+•
+•
+•
+AstravexOS • Windows 11 Pro • pagina 2 din 9
+2. Origine, distribuție și verificarea fișierelor
+Autor: proiect independent derulat de echipa AstravexOS
+Risc de securitate: pentru că oricine poate reposta un ISO, există un risc real de fișiere modificate răuintenționat. Verifică întotdeauna MD5 / SHA-256 față de valorile publicate de sursa proiectului și evită siteurile care cer bani, instalează „download manager"-e proprii sau livrează executabile suplimentare.
+3. Edițiile disponibile le faci pe toate in acelasi ISO (variantele ISO)
+Fiecare versiune majoră conține mai multe „ediții" în același ISO. Alegerea se face în timpul instalării.
+Ediție Ce înseamnă Pentru cine
+COMPACT Practic Windows 11 neatins — fără tweak-uri,
+doar aplicațiile și bloatware-ul eliminate
+Utilizatori normali, birou, laptop,
+tabletă, server, OEM
+COMPACT + DEF La fel, dar cu Windows Defender activ Cei care vor securitate standard
+SUPERLITE Versiunea ajustată agresiv: servicii oprite,
+componente dezactivate, optimizări de
+performanță
+Gameri, streaming, PC-uri slabe
+(utilizatori avansați)
+SUPERLITE + DEF SUPERLITE cu Defender păstrat Gaming plus protecție antivirus de
+bază
+SUPERLITE SE SUPERLITE + meniu Start în stil Windows 7 și
+ajustări suplimentare de shell
+Cei care nu agreează Start-ul din
+Windows 11
+SUPERLITE SE + DEF SE cu Defender inclus —
+DEF = „with Defender" (cu antivirusul inclus). W/O DEFENDER = fără Defender — varianta clasică SUPERLITE /
+SE.
+Există și linii separate de produs:
+Windows 11 Pro (consumer): 25H2, 24H2, 23H2, 22H2, 21H2;
+Windows 11 Enterprise LTSC 2024 + IoT LTSC: aceleași variante SUPERLITE / SE / COMPACT, pe bază
+LTSC (fără Store, fără Cortana, suport extins de 10 ani);
+Windows 11 IoT Enterprise 25H2.
+•
+•
+•
+•
+•
+•
+•
+AstravexOS • Windows 11 Pro • pagina 3 din 9
+
+4. Versiuni actuale și ciclu de actualizare
+Versiune Build Ediții Mărime creezi toate in acelasi iso
+25H2 — Official Release, Update
+12
+26200.9711 PRO SUPERLITE + SE + COMPACT +
+DEFENDER + W/O DEFENDER
+~5,31 GB
+24H2 — Official Release, Update
+32
+26100.9711 idem ~5,24 GB
+25H2 IoT Enterprise 26200.8457+ SUPERLITE / SE / COMPACT ~5 GB
+24H2 LTSC 2024 + IoT 26100.6899 ENT LTSC + IoT, SUPERLITE / SE /
+COMPACT / DEF
+~5,3 GB
+23H2 (Moment 5) 22631.7584 SUPERLITE / SE / COMPACT / DEF ~5,39 GB
+22H2 22621.5909 SUPERLITE / SE / COMPACT / DEF ~4,5 GB
+21H2 (stable, legacy) 22000.194 Superlite / Compact / ±Defender ~3,0 GB
+Toate edițiile sunt x64, limba ro-RO. Ritmul de actualizare este de aproximativ o dată pe lună, sincronizat
+cu Patch Tuesday, cu changelog publicat: build nou, .NET Framework actualizat, Windows Recovery (WinRE)
+actualizat, Start menu pentru SE, drivere actualizate în mediul bootabil.
+Noutăți notabile în ciclul 2026
+Xbox Mode deblocat și funcții „K2" activate în build-urile 24H2 (Update 27–28);
+bypass pentru următoarea generație (26H2) și suport îmbunătățit pentru upgrade in-place;
+corecție pentru eroarea Defender „Page Not Available" în versiunile cu Defender;
+WPE bootabil actualizat (AOMEI Partition Manager, WinNTsetup, CPU-Z);
+tweak-uri „Improve DirectX 12 / AI Generated / Workstation";
+fix-uri pentru tastatura pe ecran și pentru imprimante pe conturile de administrator.
+
+5. Funcții și optimizări incluse
+Performanță
+DirectX 12 îmbunătățit — setări de tweak orientate spre jocuri;
+optimizări pentru workload-uri AI / workstation;
+Compact OS
+pagefile, servicii, task-uri programate și Search Indexer optimizate;
+Performance Mode inclus (profil de performanță);
+procese și memorie reduse semnificativ în idle — efect direct în jocuri pe sisteme slabe.
+Confidențialitate
+telemetrie dezactivată / eliminată (în SUPERLITE);
+rapoarte de erori oprite (SUPERLITE);
+UAC setat pe „Never notify" în unele variante;
+Windows Update poate fi pus pe pauză până în anul 2077.
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+AstravexOS • Windows 11 Pro • pagina 4 din 9
+Funcționalitate
+Astravex Toolbox — utilitarul central de configurare (detalii la secțiunea 7);
+suport pentru orice limbă și tastatură (language pack-uri descărcabile);
+suport UWP Games / UWP Apps (Forza, Gears of War etc.) — necesită activarea AdminFilter în 24H2 /
+25H2 SUPERLITE & SE;
+updatabil — update la cele mai noi build-uri Windows 11 și upgrade in-place de pe Windows 10/11 fără
+pierdere de date;
+TPM 2.0 inclus sau bypass fără TPM — instalabil pe hardware neacceptat oficial;
+icon packs și Windows Themes pack personalizate;
+custom bootable (WPE) — mediu de boot cu AOMEI Partition Manager, WinNTsetup, CPU-Z;
+normal bootable SV2;
+suport format ReFS în bootabilul nou;
+driverele stock nu sunt eliminate; Windows Recovery (WinRE) nu este eliminat.
+
+6. Ce se elimină sau se dezactivează
+Componentă Status Consecință
+Aplicații Windows, System Apps, AI
+Apps (Cortana, Recall, widget-uri)
+Eliminate Fără aplicații preinstalate; se pot readăuga din
+Store
+Windows Security / Defender /
+SmartScreen
+Eliminate în versiunile W/O
+DEFENDER
+Fără antivirus — instalează imediat o soluție
+terță
+OneDrive Eliminat Se poate readuce din Astravex Toolbox
+Print Spooler Dezactivat Imprimanta nu funcționează până nu setezi
+serviciul pe Automatic sau folosești Toolbox
+(opțiunea 1)
+Remote Desktop, tastatură
+tabletă, NFC, clipboard, Focus
+Assist
+Dezactivate — doar
+SUPERLITE
+Fără RDP, fără istoric clipboard etc.
+Action Center / notificări Dezactivate — doar
+SUPERLITE
+Fără notificări de sistem
+Telemetrie și rapoarte de erori Oprite — doar SUPERLITE Confidențialitate mai bună, dar fără
+diagnostice de crash
+WinSxS backup Eliminat Nu mai poți dezinstala update-uri;
+repararea componentelor este limitată
+Microsoft Store și Xbox Eliminate Se readuc cu o opțiune din Toolbox (necesar
+pentru Game Pass)
+Drag & drop pe taskbar Limitat în SUPERLITE Se activează cu AdminFilter în Toolbox
+(opțiunea 42/16)
+UAC (User Account Control) „Never notify" în unele
+variante
+Mai comod, mai puțin sigur
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+AstravexOS • Windows 11 Pro • pagina 5 din 9
+Regulă practică: dacă folosești PC-ul pentru muncă, Office, imprimantă, VPN corporate sau Remote Desktop,
+alege COMPACT (eventual + DEF). SUPERLITE este pentru gaming și sisteme slabe, cu compromisuri clare.
+
+7. Astravex Toolbox ti`am pus eu ce vreau sa imi faci
+
+8. Cerințe de sistem
+Componentă Minim Recomandat
+Procesor x64, 1 GHz, 2 nuclee x64 modern, 4+ nuclee
+Memorie RAM 4 GB 8–16 GB
+Spațiu pe disc 20 GB liberi 40 GB+ pe SSD / NVMe
+TPM / Secure Boot opțional (bypass inclus) TPM 2.0 + Secure Boot
+USB pentru instalare 8 GB 16 GB, USB 3.0
+Firmware BIOS sau UEFI UEFI + GPT
+
+9. Instalare pas cu pas
+Descarcă arhiva din sursa proiectului și verifică hash-ul (MD5 / SHA-256).
+Extrage ISO-ul cu 7-Zip sau WinRAR (parolă 25h2 / 24h2).
+Scrie ISO-ul pe USB cu Rufus (schemă GPT / UEFI, sistem de fișiere NTFS), cu WinNTsetup din mediul
+WPE, sau cu Ventoy (simplu copy-paste pe stick).
+Boot din USB — tasta de boot rapid (F12 / F11 / F8 / Esc) la pornire. Dezactivează Secure Boot dacă
+întâmpini probleme.
+În Windows Setup alege ediția dorită (COMPACT / SUPERLITE / SE, ±DEF), partiția, limba și contul de
+utilizator.
+După prima pornire deschide Astravex Toolbox și configurează: Store, Xbox, OneDrive, Print Spooler,
+limba, AdminFilter.
+Instalează driverele oficiale ale producătorului (GPU, chipset etc.), apoi antivirus dacă ai ales versiunea
+fără Defender.
+•
+•
+•
+•
+•
+•
+•
+•
+•
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+AstravexOS • Windows 11 Pro • pagina 6 din 9
+Sfaturi: nu instala peste o partiție cu date importante fără backup. Pentru upgrade in-place fără pierdere de
+date, rulează setup.exe din ISO direct din Windows, cu antivirusul terț dezactivat temporar. Pentru imprimante
+pe SUPERLITE / SE ai nevoie de Update 12 sau mai nou.
+10. Actualizare și mentenanță
+Windows Update funcționează — poți primi update-uri cumulative oficiale Microsoft.
+Poți amâna update-urile până în 2077 (tweak inclus) — util pe termen scurt, dar nu recomandat:
+rămâi fără patch-uri de securitate.
+Fiecare „Update n" al proiectului aduce un ISO nou; nu este obligatoriu să reinstalezi — poți aplica
+update-urile prin Windows Update sau face upgrade in-place.
+Defender se poate reactiva din Toolbox doar în edițiile care îl conțin (DEF).
+Păstrează ISO-ul curent pentru rollback: WinSxS fiind eliminat, dezinstalarea update-urilor nu este
+posibilă.
+11. Avantaje și dezavantaje
+Avantaje
+boot rapid, sistem „slim", consum redus de RAM și CPU;
+instalabil pe hardware neacceptat oficial (fără TPM, CPU vechi);
+zero bloatware, telemetrie redusă, confidențialitate mai bună;
+Toolbox foarte practic: Store, Xbox, OneDrive, limbi, drivere, tweak-uri;
+rămâne updatabil și suportă upgrade fără pierdere de date;
+potrivit pentru gaming, streaming, mini-PC, laptop vechi, mașini virtuale.
+Dezavantaje și riscuri
+nu este oficial și nu este licențiat de Microsoft — statut legal ambiguu; activarea se face de
+obicei prin soluții neoficiale (KMS / activatori), ceea ce încalcă termenii de licențiere;
+securitate redusă în versiunile fără Defender: fără antivirus, fără SmartScreen;
+WinSxS eliminat → nu poți dezinstala update-uri, repararea sistemului e limitată, unele feature-uri
+opționale pot eșua;
+posibile probleme de compatibilitate: imprimante, VPN corporate, RDP, jocuri cu anti-cheat
+strict;
+risc de ISO modificat dacă nu descarci din sursa proiectului;
+fără suport tehnic oficial — doar comunitate;
+în mediu de firmă sau producție: de evitat — probleme de conformitate, audit și securitate.
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+AstravexOS • Windows 11 Pro • pagina 7 din 9
+12. Pentru cine este potrivit
+Potrivit pentru Nepotrivit pentru
+gameri cu PC-uri modeste care vor FPS în plus și boot
+rapid
+firme, medii cu date sensibile, contabilitate, cabinete
+medicale (conformitate + securitate)
+utilizatori avansați care știu ce fac și pot repara singuri
+sistemul
+utilizatori neexperimentați care au nevoie de suport și
+garanție
+PC-uri vechi, secundare, HTPC, media center, mașini
+virtuale
+sisteme care depind de RDP, domeniu (AD), BitLocker cu
+politici stricte, imprimante de rețea, VPN corporate
+entuziaști care vor un Windows fără bloatware și fără
+telemetrie
+oricine are nevoie de securitate serioasă — acolo
+Windows 11 oficial (sau LTSC oficial) este varianta
+corectă
+Merge cu imprimanta?
+Da, dar trebuie să activezi Print Spooler (Services → Automatic).
+Pot face upgrade fără formatare?
+Da — suportă upgrade in-place de pe Windows 10/11 fără pierdere de date.
+Cât ocupă?
+ISO ~5,2–5,4 GB
+Ce ediție să aleg? Toate 4 variante le vreau in acelasi iso
+Muncă / Office / laptop → COMPACT (+DEF). Gaming / PC slab → SUPERLITE (+DEF). Vrei Start ca în
+Windows 7 → SE.
+AstravexOS • Windows 11 Pro • pagina 8 din 9
+14. Concluzie
+AstravexOS este o variantă „lite" de Windows 11 Pro: un sistem rapid, curat, fără bloatware și telemetrie,
+instalabil pe hardware vechi. În forma actuală — 25H2 build
+26200.9711 și 24H2 build 26100.9711 — este activ întreținut și updatabil.
+Compromisul este clar: câștigi performanță și spațiu, pierzi securitate, suport și certitudinea
+legală. Pentru gaming și PC-uri secundare este o opțiune populară și funcțională; pentru muncă, date
+importante sau mediu de firmă, Windows 11 oficial (sau LTSC oficial) rămâne alegerea corectă.
+15. Fișă rapidă de referință
+Element Valoare
+Build curent 25H2 26200.9711 — Official Release, Update 12
+Build curent 24H2 26100.9711 — Official Release, Update 32
+Limbă / arhitectură ro-RO / x64 (limbi suplimentare din Toolbox)
+Mărime ISO ~5,24 – 5,39 GB 
+Ediție recomandată — muncă / Office COMPACT (+DEF)
+Ediție recomandată — gaming / PC slab SUPERLITE (+DEF) sau SE (+DEF)
+Cerințe minime 4 GB RAM, 20 GB disc, x64, USB 8 GB, TPM opțional
+Setări obligatorii după instalare Print Spooler (imprimante), AdminFilter (UWP apps), Store / Xbox,
+limbă, antivirus
+Recomandare de securitate verificare MD5 / SHA-256 a ISO-ului înainte de instalare

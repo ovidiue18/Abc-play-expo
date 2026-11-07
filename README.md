@@ -1,108 +1,88 @@
-# ABC Play — One Command Kit
+# Abc-play-expo + AstravexOS — ONE COMMAND KIT
 
-> **O singură comandă. Zero erori.** Proiect Expo complet, gata de rulat.
+> **O singura comanda in CMD face tot proiectul de la 0, fara erori.**
 
-## 🚀 Start în 10 secunde (Windows CMD)
+Acest repo contine **doua proiecte**, ambele cu **ONE COMMAND KIT**:
 
-Deschizi **CMD** în folderul proiectului și scrii:
+---
+
+## 1️⃣ ASTRAVEX OS — Windows 11 Pro (NOU, cum ai cerut)
+
+**Exact ca in fisierele trimise** — Windows 11 cu desktop, installer, toolbox.
+
+### O comanda:
 
 ```bat
-kit
+BUILD.cmd
+```
+sau direct:
+```bat
+cd AstravexOS
+build.cmd
 ```
 
-Atât. Scriptul face tot:
-1. Verifică `Node.js` + `npm` (instalează automat cu `winget` dacă lipsește)
-2. Verifică structura proiectului + repară `assets` dacă e nevoie
-3. `npm install` (cu fallback `legacy-peer-deps` + curățare cache dacă e corupt)
-4. Verifică `Expo CLI` + validează proiectul
-5. Îți arată ce să faci mai departe (sau pornește direct cu `kit --go`)
+**Ce primesti:**
+- `AstravexOS/preview/index.html` — **desktop Windows 11 complet in browser** (taskbar, Start, Explorer, Settings, Toolbox, boot animation, login, installer OOBE cu 9 pasi, profile COMPACT/SUPERLITE/NODEF/LTSC)
+- `AstravexOS/AstravexOS-Toolbox.cmd` — toolbox consola (31 optiuni, ca Ghost Toolbox, doar cu unelte oficiale winget/reg/ps)
+- `AstravexOS/assets/astravex-wallpaper.jpg` — wallpaper neon 1920×1080
+- `AstravexOS/docs/` — ghid complet
+- `AstravexOS/release/` — kit + SHA256
 
-### Variante
+**Cum editezi:**
+- Totul e in `AstravexOS/src/astravex_menus.py` — adaugi un `IT()` si apare in CMD + EXE. Apoi rulezi `build.cmd` din nou.
 
-| Unde | Comanda unică | Ce face |
-|------|---------------|---------|
-| **Windows CMD** | `kit` | kit complet |
-| **Windows CMD** | `kit --go` | kit + pornește Expo automat |
-| **PowerShell** | `.\kit.ps1` | același lucru în PS |
-| **PowerShell** | `.\kit.ps1 --go` | + pornire |
-| **macOS / Linux** | `./setup.sh` sau `bash setup.sh` | kit |
-| **orice OS** | `npm run kit` | kit |
-| **orice OS** | `npm run go` | kit + start |
-| **dublu-click** | `START.cmd` | kit + start |
+Detalii: `AstravexOS/docs/README-Windows-Kit.md`
 
-După kit:
+**Preview offline:** dublu-click pe `AstravexOS/preview/index.html` — merge fara server.
 
+---
+
+## 2️⃣ ABC Play — Expo App (existent)
+
+App mobila pentru invatat alfabetul (A-Z, RO/EN, TTS).
+
+### O comanda:
+
+```bat
+kit.cmd
+```
+sau:
 ```bash
-npm start       # Expo — scanezi QR cu Expo Go
-npm run web     # deschide în browser
-npm run android # Android
+npm run kit
+kit --go   # + porneste Expo
 ```
 
+Detalii in sectiunea de mai jos.
+
 ---
 
-## 📦 Ce conține kit-ul
+## ABC Play — detalii
 
-```
-Abc-play-expo/
-├── kit.cmd        → ONE COMMAND (Windows CMD)
-├── kit.ps1        → ONE COMMAND (PowerShell)
-├── START.cmd      → dublu-click = kit + start
-├── setup.sh       → ONE COMMAND (macOS/Linux)
-├── package.json   → dependințe fixe, fără conflicte
-├── app.json       → config Expo
-├── babel.config.js
-├── App.js         → aplicația completă (A-Z, RO/EN, TTS)
-├── assets/        → icon, splash, a.png/b.png/c.png
-└── scripts/
-    ├── kit.js     → creierul kit-ului (verificări + instalare)
-    └── clean.js   → curățare cache (npm run clean)
+```bat
+kit              # verifica Node, instaleaza, repara assets, verifica Expo
+kit --go         # + porneste Expo direct
+START.cmd        # dublu-click
 ```
 
-### De ce nu ai erori
+Dupa kit:
+```bash
+npm start       # QR pentru telefon (Expo Go)
+npm run web     # browser
+```
 
-- **Node 18+ verificat** înainte de orice
-- **`npm install` cu 3 încercări**: normal → `legacy-peer-deps` → curățare + reinstall
-- **Assets reparate automat** — dacă lipsește o imagine, se generează placeholder ca să nu crape `require()`
-- **Expo CLI verificat** — se instalează dacă lipsește
-- **Idempotent** — poți rula `kit` de 100 de ori, nu strică nimic
+**Structura ABC Play:**
+```
+App.js, app.json, package.json, babel.config.js
+assets/ (icon, splash, a/b/c.png)
+scripts/kit.js (creierul kit-ului)
+kit.cmd / kit.ps1 / setup.sh
+```
 
----
-
-## 🎮 Aplicația
-
-- 26 de litere (A-Z), fiecare cu cuvânt în RO + EN
-- Imagini pentru A/B/C + emoji fallback pentru rest (nu crapă niciodată)
-- Buton **Spune cuvântul** + **Spune litera** (expo-speech, RO/EN)
-- Animații + navigare swipe/dot-uri + random
-- Responsive (telefon / tabletă / web)
+**Fix-uri automate:** 3 incercari `npm install` (normal → legacy-peer-deps → cache clean), reparare assets, verificare Expo.
 
 ---
 
-## 🛠️ Cerințe
+## Cerinte
 
-- **Node.js 18+** (verificat automat)
-- Internet la prima instalare (npm)
-- Opțional: aplicația **Expo Go** pe telefon pentru scanare QR
-
-Instalare Node rapid: `winget install OpenJS.NodeJS.LTS` (Windows) sau https://nodejs.org
-
----
-
-## ❓ Probleme?
-
-| Eroare | Soluție |
-|--------|---------|
-| `Node nu este instalat` | `winget install OpenJS.NodeJS.LTS` → redeschizi CMD → `kit` |
-| `npm install` eșuează | `npm run clean` → `kit` (kit-ul face asta automat) |
-| `expo-speech` nu merge pe web | Normal — pe web folosește Web Speech API, pe telefon e nativ. Butonul tot funcționează. |
-| imagini lipsă | Kit-ul regenerează placeholder-uri automat |
-
----
-
-## 📄 Licență
-
-MIT — folosește-l cum vrei.
-
-## ✨ Preview HTML inclus
-
-`astravex-preview.html` (din atașament) rămâne în repo ca referință de design — nu e necesar pentru rulare.
+- **AstravexOS:** Windows 10/11 + Python 3.12+ (se instaleaza automat cu winget)
+- **ABC Play:** Node.js 18+ + internet prima data
