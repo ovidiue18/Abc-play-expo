@@ -1,0 +1,68 @@
+╔════════════════════════════════════════════════════════╗
+║  PACHET ONE COMMAND — ASTRAVEX OS WINDOWS 11         ║
+║  O comanda face tot Windows-ul de la 0                ║
+╚════════════════════════════════════════════════════════╝
+
+CONTINUT PACHET:
+---------------
+1) Pachet-ONE-COMMAND-AstravexOS-Windows.zip (3.5 MB) — COMPLET
+   → Contine TOT: Windows kit + ABC Play app
+2) Pachet-ASTRAVEX-WINDOWS-ONLY.zip (2.7 MB) — DOAR WINDOWS
+   → Doar folderul AstravexOS (Windows 11)
+
+CUM FOLOSESTI (WINDOWS):
+------------------------
+1. Descarca ZIP-ul
+2. Click dreapta → Extrage tot (Extract All)
+3. Intri in folderul extras:
+   - Pentru Windows:  AstravexOS/build.cmd  (dublu-click sau scrie build.cmd in CMD)
+   - Din radacina:    BUILD.cmd
+
+O SINGURA COMANDA:
+------------------
+  build.cmd
+
+Face:
+ [1/4] Verifica Python (il instaleaza automat cu winget daca lipseste)
+ [2/4] Verifica structura
+ [3/4] Genereaza Toolbox.cmd + preview/index.html + AstravexData.cs
+ [4/4] Verifica output
+
+Rezultat:
+ - AstravexOS-Toolbox.cmd (Toolbox consola, 837 linii, 31 optiuni)
+ - preview/index.html (Desktop Windows 11 interactiv, 1.2 MB)
+   → dublu-click sa-l deschizi in browser (merge offline)
+ - release/ (SHA256)
+
+PREVIEW WINDOWS:
+----------------
+Dublu-click pe:  AstravexOS/preview/index.html
+→ Boot → Login → Installer OOBE (9 pasi) → Desktop
+→ Taskbar, Start, Explorer, Settings, Toolbox, context menu
+→ Switch profile: COMPACT / SUPERLITE / NODEF / LTSC
+
+EDITARE:
+--------
+Toate meniurile sunt in:  AstravexOS/src/astravex_menus.py
+Adaugi un IT() si rulezi din nou build.cmd — rescrie tot.
+
+EXEMPLU:
+  IT(99, "Instaleaza Chrome", [ A("Chrome", [WINGET("Google.Chrome")]) ])
+
+CERINTE:
+--------
+- Windows 10/11
+- Python 3.12+ (se instaleaza automat)
+- Administrator pentru Toolbox
+
+VERIFICARE INTEGRITATE (SHA256):
+--------------------------------
+4935d10b3318bba4320eaa2404a204b68fd9023598b6e92166629ea696af8ea3  Pachet-ONE-COMMAND-AstravexOS-Windows.zip
+af24a75582fb09183a4d735ef2450fdb116d9c5597224c3d70865441065e6f12  Pachet-ASTRAVEX-WINDOWS-ONLY.zip
+
+GITHUB:
+-------
+git clone https://github.com/ovidiue18/Abc-play-expo.git
+cd Abc-play-expo
+BUILD.cmd
+
